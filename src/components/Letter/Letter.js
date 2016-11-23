@@ -2,8 +2,10 @@ import React from 'react';
 import './Letter.css';
 
 const Letter = props => {
+  const classNames = props.letter === ' ' ? 'Letter space' : 'Letter';
+
   return (
-    <div className="Letter" onClick={() => props.onClick(props.letter)} disabled={props.disabled}>{props.letter}</div>
+    <div className={classNames} onClick={() => props.onClick(props.letter)} disabled={props.disabled}>{props.letter}</div>
   )
 };
 
