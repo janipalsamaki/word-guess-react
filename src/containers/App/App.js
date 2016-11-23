@@ -12,7 +12,6 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = this.getInitialState();
     this.handleLetterClick = this.handleLetterClick.bind(this);
     this.newGame = this.newGame.bind(this);
@@ -56,9 +55,8 @@ class App extends Component {
   }
 
   updateGameStatus(state, selectedLetter) {
-    const nextState = Object.assign({}, state);
-
     if (state.guessesLeft > 0) {
+      const nextState = Object.assign({}, state);
       const alreadyGuessedLetter = state.guessedLetters.has(selectedLetter);
 
       if (!alreadyGuessedLetter) {
