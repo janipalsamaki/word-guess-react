@@ -1,0 +1,14 @@
+.Alphabet .Letter {
+  cursor: pointer;
+}
+
+.Alphabet .Letter:hover {
+  transition: all 0.2s;
+  transform: rotate(-3deg) scale(1.1);
+}
+
+.Alphabet .Letter[disabled] {
+  background-color: transparent;
+  cursor: not-allowed;
+  transform: none;
+}

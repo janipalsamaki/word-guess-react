@@ -1,0 +1,10 @@
+.GuessesLeft {
+  padding: 1em;
+  text-align: center;
+  display: inline-block;
+  color: #5F4B01;
+  background-color: #F9E8A8;
+  margin: 1em 0 1em 0;
+  cursor: default;
+  border-radius: 10px 0 0 10px;
+}

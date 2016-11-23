@@ -1,0 +1,14 @@
+.Word .Letter {
+  color: transparent;
+  background-color: transparent;
+  border: solid #5F4B01;
+  border-width: 0 0 0.2em 0;
+  border-radius: 0;
+  cursor: default;
+  padding: 0.1em;
+  margin: 0.12em;
+}
+
+.Word .Letter[disabled] {
+  color: #5F4B01;
+}
