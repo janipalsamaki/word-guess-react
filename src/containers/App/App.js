@@ -55,7 +55,7 @@ class App extends Component {
   }
 
   updateGameStatus(state, selectedLetter) {
-    if (state.guessesLeft > 0) {
+    if (state.guessesLeft > 0 && !state.guessedTheWord) {
       const nextState = Object.assign({}, state);
       const alreadyGuessedLetter = state.guessedLetters.has(selectedLetter);
 
@@ -65,7 +65,7 @@ class App extends Component {
       }
 
       const guessedTheWord = nextState.word
-        .filter(letter => !['-', ' '].includes(letter))
+        .filter(letter => !['-', ' '].includes(letter.letter))
         .every(letter => nextState.guessedLetters.has(letter.letter));
 
       const lettersFoundInWord = nextState.word.filter(letter => letter.letter === selectedLetter).length > 0;
