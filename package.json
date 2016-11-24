@@ -1,7 +1,13 @@
 {
   "name": "word-guess-react",
+  "homepage": "http://palsamaki.com/react/sana-arvaus/",
   "version": "0.1.0",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janipalsamaki/word-guess-react.git"
+  },
+  "author": "Jani Palsamäki",
+  "license": "ISC",
   "devDependencies": {
     "react-scripts": "0.7.0"
   },
