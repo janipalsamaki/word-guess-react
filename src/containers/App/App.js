@@ -3,9 +3,11 @@ import Alphabet from '../../components/Alphabet/Alphabet';
 import Category from '../../components/Category/Category';
 import GameResult from '../../components/GameResult/GameResult';
 import GuessesLeft from '../../components/GuessesLeft/GuessesLeft';
+import LanguageSwitcher from '../../components/LanguageSwitcher/LanguageSwitcher';
 import NewWord from '../../components/NewWord/NewWord';
 import Word from '../../components/Word/Word';
-import dictionary from '../../dictionary';
+import dictionary_fi from '../../dictionaries/dictionary-fi';
+import dictionary_en from '../../dictionaries/dictionary-en';
 import './App.css';
 
 class App extends Component {
@@ -13,12 +15,19 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = this.getInitialState();
+    this.handleLanguageClick = this.handleLanguageClick.bind(this);
     this.handleLetterClick = this.handleLetterClick.bind(this);
     this.newGame = this.newGame.bind(this);
   }
 
-  getInitialState() {
+  getInitialState(language = 'gb') {
     const letters = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'].map(letter => ({letter, disabled: false}));
+
+    const dictionaries = new Map();
+    dictionaries.set('fi', dictionary_fi);
+    dictionaries.set('gb', dictionary_en);
+
+    const dictionary = dictionaries.get(language);
     const category = this.randomCategory(dictionary);
     const word = [...this.randomWord(category)].map(letter => ({letter, disabled: false}));
     const guessedLetters = new Set();
@@ -27,6 +36,7 @@ class App extends Component {
 
     return {
       letters,
+      language,
       category,
       word,
       guessedLetters,
@@ -48,6 +58,10 @@ class App extends Component {
 
   randomWord(category) {
     return category.words[Math.floor(Math.random() * category.words.length)].toUpperCase();
+  }
+
+  handleLanguageClick(language) {
+    this.setState(this.getInitialState(language));
   }
 
   handleLetterClick(selectedLetter) {
@@ -83,18 +97,20 @@ class App extends Component {
   }
 
   newGame() {
-    this.setState(this.getInitialState());
+    this.setState(this.getInitialState(this.state.language));
   }
 
   render() {
+    const languages = ['fi', 'gb'];
+
     return (
       <div>
         <Alphabet letters={this.state.letters} onClick={this.handleLetterClick} />
         <Category category={this.state.category} />
         <Word word={this.state.word} />
         <GuessesLeft guessesLeft={this.state.guessesLeft} />
+        <LanguageSwitcher languages={languages} onClick={this.handleLanguageClick} />
         <NewWord onClick={this.newGame} />
-
         <GameResult
           guessedTheWord={this.state.guessedTheWord}
           guessesLeft={this.state.guessesLeft}

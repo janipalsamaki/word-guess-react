@@ -9,6 +9,6 @@
   margin: 0.12em;
 }
 
-.Word .Letter[disabled] {
+.Word .Letter[disabled], .Word .Letter.dash {
   color: #5F4B01;
 }

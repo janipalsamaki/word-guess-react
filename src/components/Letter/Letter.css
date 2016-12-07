@@ -11,6 +11,6 @@
   background-color: #5F4B01;
 }
 
-.space {
+.space, .dash {
   border: none !important;
 }
