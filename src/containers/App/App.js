@@ -21,7 +21,8 @@ class App extends Component {
   }
 
   getInitialState(language = 'gb') {
-    const letters = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'].map(letter => ({letter, disabled: false}));
+    const alphabet = language === 'gb' ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ';
+    const letters = [...alphabet].map(letter => ({letter, disabled: false}));
 
     const dictionaries = new Map();
     dictionaries.set('fi', dictionary_fi);
