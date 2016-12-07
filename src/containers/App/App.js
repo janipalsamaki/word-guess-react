@@ -14,13 +14,13 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = this.getInitialState();
-    this.handleLanguageClick = this.handleLanguageClick.bind(this);
-    this.handleLetterClick = this.handleLetterClick.bind(this);
-    this.newGame = this.newGame.bind(this);
+    this.state = this.initialState();
+    this.changeLanguage = this.changeLanguage.bind(this);
+    this.selectLetter = this.selectLetter.bind(this);
+    this.startNewGame = this.startNewGame.bind(this);
   }
 
-  getInitialState(language = 'gb') {
+  initialState(language = 'gb') {
     const alphabet = language === 'gb' ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ';
     const letters = [...alphabet].map(letter => ({letter, disabled: false}));
 
@@ -61,11 +61,11 @@ class App extends Component {
     return category.words[Math.floor(Math.random() * category.words.length)].toUpperCase();
   }
 
-  handleLanguageClick(language) {
-    this.setState(this.getInitialState(language));
+  changeLanguage(language) {
+    this.setState(this.initialState(language));
   }
 
-  handleLetterClick(selectedLetter) {
+  selectLetter(selectedLetter) {
     this.updateGameStatus(this.state, selectedLetter);
   }
 
@@ -97,8 +97,8 @@ class App extends Component {
     }
   }
 
-  newGame() {
-    this.setState(this.getInitialState(this.state.language));
+  startNewGame() {
+    this.setState(this.initialState(this.state.language));
   }
 
   render() {
@@ -106,16 +106,16 @@ class App extends Component {
 
     return (
       <div>
-        <Alphabet letters={this.state.letters} onClick={this.handleLetterClick} />
+        <Alphabet letters={this.state.letters} onClick={this.selectLetter} />
         <Category category={this.state.category} />
         <Word word={this.state.word} />
         <GuessesLeft guessesLeft={this.state.guessesLeft} />
-        <LanguageSwitcher languages={languages} onClick={this.handleLanguageClick} />
-        <NewWord onClick={this.newGame} />
+        <LanguageSwitcher languages={languages} onClick={this.changeLanguage} />
+        <NewWord onClick={this.startNewGame} />
         <GameResult
           guessedTheWord={this.state.guessedTheWord}
           guessesLeft={this.state.guessesLeft}
-          onClick={this.newGame} />
+          onClick={this.startNewGame} />
       </div>
     );
   }

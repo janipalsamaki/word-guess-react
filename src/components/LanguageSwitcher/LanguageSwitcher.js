@@ -6,7 +6,7 @@ const LanguageSwitcher = props => {
   return (
     <div className="LanguageSwitcher">
       {[...props.languages].map(
-        language => <Flag language={language} onClick={props.onClick}>{language}</Flag>)
+        language => <Flag key={language} language={language} onClick={props.onClick}>{language}</Flag>)
       }
     </div>
   )
