@@ -7,4 +7,8 @@ const GuessesLeft = props => {
   )
 };
 
+GuessesLeft.propTypes = {
+  guessesLeft: React.PropTypes.number.isRequired
+};
+
 export default GuessesLeft

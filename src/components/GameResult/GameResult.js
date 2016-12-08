@@ -11,4 +11,10 @@ const GameResult = props => {
   )
 };
 
+GameResult.propTypes = {
+  guessedTheWord: React.PropTypes.bool.isRequired,
+  guessesLeft: React.PropTypes.number.isRequired,
+  onClick: React.PropTypes.func.isRequired
+};
+
 export default GameResult

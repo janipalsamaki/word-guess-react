@@ -9,4 +9,8 @@ const NewWord = props => {
   )
 };
 
+NewWord.propTypes = {
+  onClick: React.PropTypes.func.isRequired
+};
+
 export default NewWord

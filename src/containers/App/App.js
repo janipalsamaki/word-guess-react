@@ -76,7 +76,7 @@ class App extends Component {
 
       if (!alreadyGuessedLetter) {
         nextState.guessedLetters.add(selectedLetter);
-        nextState.letters.find(letter => letter.letter === selectedLetter).disabled = 'disabled';
+        nextState.letters.find(letter => letter.letter === selectedLetter).disabled = true;
       }
 
       const guessedTheWord = nextState.word
@@ -91,7 +91,7 @@ class App extends Component {
         nextState.guessesLeft--;
       }
 
-      nextState.word.forEach(letter => letter.letter === selectedLetter ? letter.disabled = 'disabled' : '');
+      nextState.word.forEach(letter => letter.letter === selectedLetter ? letter.disabled = true : '');
 
       this.setState(nextState);
     }

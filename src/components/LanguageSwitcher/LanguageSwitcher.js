@@ -12,4 +12,9 @@ const LanguageSwitcher = props => {
   )
 };
 
+LanguageSwitcher.propTypes = {
+  languages: React.PropTypes.array.isRequired,
+  onClick: React.PropTypes.func.isRequired
+};
+
 export default LanguageSwitcher

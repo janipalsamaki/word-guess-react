@@ -12,4 +12,9 @@ function Alphabet(props) {
   );
 }
 
+Alphabet.propTypes = {
+  letters: React.PropTypes.array.isRequired,
+  onClick: React.PropTypes.func.isRequired
+};
+
 export default Alphabet

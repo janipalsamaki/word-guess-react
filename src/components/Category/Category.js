@@ -7,4 +7,8 @@ const Category = props => {
   )
 };
 
+Category.propTypes = {
+  category: React.PropTypes.object.isRequired
+};
+
 export default Category

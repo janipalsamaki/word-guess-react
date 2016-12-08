@@ -11,4 +11,9 @@ const Flag = props => {
   )
 };
 
+Flag.propTypes = {
+  language: React.PropTypes.string.isRequired,
+  onClick: React.PropTypes.func.isRequired
+};
+
 export default Flag

@@ -12,4 +12,8 @@ const Word = props => {
   );
 };
 
+Word.propTypes = {
+  word: React.PropTypes.array.isRequired
+};
+
 export default Word

@@ -11,4 +11,10 @@ const Letter = props => {
   )
 };
 
+Letter.propTypes = {
+  disabled: React.PropTypes.bool.isRequired,
+  letter: React.PropTypes.string.isRequired,
+  onClick: React.PropTypes.func.isRequired
+};
+
 export default Letter
