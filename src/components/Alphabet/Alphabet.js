@@ -2,7 +2,7 @@ import React from 'react';
 import Letter from '../Letter/Letter';
 import './Alphabet.css';
 
-function Alphabet(props) {
+const Alphabet = props => {
   return (
     <div className="Alphabet">
       {[...props.letters].map(
@@ -10,7 +10,7 @@ function Alphabet(props) {
       )}
     </div>
   );
-}
+};
 
 Alphabet.propTypes = {
   letters: React.PropTypes.array.isRequired,
