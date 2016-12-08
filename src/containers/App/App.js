@@ -71,7 +71,7 @@ class App extends Component {
 
   updateGameStatus(state, selectedLetter) {
     if (state.guessesLeft > 0 && !state.guessedTheWord) {
-      const nextState = Object.assign({}, state);
+      const nextState = {...state};
       const alreadyGuessedLetter = state.guessedLetters.has(selectedLetter);
 
       if (!alreadyGuessedLetter) {
