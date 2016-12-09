@@ -13,3 +13,9 @@ body {
   background-color: #AC953B;
   font-size: larger;
 }
+
+footer .fa {
+  color: #5F4B01;
+  float: left;
+  padding: 0.5em 0 0.5em 0.5em;
+}
