@@ -5,9 +5,12 @@ const GameResult = props => {
   const inProgress = <i className="fa fa-smile-o" aria-hidden="true"></i>;
   const lastChance = <i className="fa fa-meh-o" aria-hidden="true"></i>;
   const lost = <i className="fa fa-frown-o" aria-hidden="true"></i>;
+  const won = <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>;
 
   return (
-    props.guessesLeft > 1
+    props.guessedTheWord
+      ? <div className="GameResult">{won}</div>
+      : props.guessesLeft > 1
       ? <div className="GameResult">{inProgress}</div>
       : props.guessesLeft === 1
       ? <div className="GameResult">{lastChance}</div>
@@ -16,6 +19,7 @@ const GameResult = props => {
 };
 
 GameResult.propTypes = {
+  guessedTheWord: React.PropTypes.bool.isRequired,
   guessesLeft: React.PropTypes.number.isRequired
 };
 

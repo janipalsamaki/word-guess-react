@@ -110,7 +110,7 @@ class App extends Component {
         <Category category={this.state.category} />
         <Word word={this.state.word} />
         <GuessesLeft guessesLeft={this.state.guessesLeft} />
-        <GameResult guessesLeft={this.state.guessesLeft} />
+        <GameResult guessedTheWord={this.state.guessedTheWord} guessesLeft={this.state.guessesLeft} />
         <LanguageSwitcher languages={languages} onClick={this.changeLanguage} />
         <NewWord onClick={this.startNewGame} />
       </div>
