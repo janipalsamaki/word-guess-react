@@ -1,6 +1,5 @@
 .GameResult {
-  color: #5F4B01;
-  background-color: #F9E8A8;
+  color: white;
   display: inline-block;
   padding: 1em;
 }

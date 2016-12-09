@@ -1,10 +1,8 @@
 .NewWord {
-  padding: 1em;
   text-align: center;
   display: inline-block;
   color: white;
-  background-color: #5F4B01;
   text-transform: uppercase;
   cursor: pointer;
-  border-radius: 0 10px 10px 0;
+  padding: 1em;
 }
