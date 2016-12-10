@@ -22,21 +22,9 @@ class App extends Component {
   }
 
   initialState(language = 'gb') {
-    const alphabet = language === 'gb'
-      ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-      : language === 'fi'
-      ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
-      : language === 'es'
-      ? 'AÁBCDEÉFGHIÍJKLMNÑOÓPQRSTUÚÜVWXYZ'
-      : 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
+    const alphabet = this.getAlphabet(language);
     const letters = [...alphabet].map(letter => ({letter, disabled: false}));
-
-    const dictionaries = new Map();
-    dictionaries.set('fi', dictionary_fi);
-    dictionaries.set('gb', dictionary_en);
-    dictionaries.set('es', dictionary_es);
-
+    const dictionaries = this.getDictionaries();
     const dictionary = dictionaries.get(language);
     const category = this.randomCategory(dictionary);
     const word = [...this.randomWord(category)].map(letter => ({letter, disabled: false}));
@@ -53,6 +41,25 @@ class App extends Component {
       guessesLeft,
       guessedTheWord
     };
+  }
+
+  getAlphabet(language) {
+    return language === 'gb'
+      ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+      : language === 'fi'
+      ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
+      : language === 'es'
+      ? 'AÁBCDEÉFGHIÍJKLMNÑOÓPQRSTUÚÜVWXYZ'
+      : 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  }
+
+  getDictionaries() {
+    const dictionaries = new Map();
+    dictionaries.set('fi', dictionary_fi);
+    dictionaries.set('gb', dictionary_en);
+    dictionaries.set('es', dictionary_es);
+
+    return dictionaries;
   }
 
   randomCategory(dictionary) {
