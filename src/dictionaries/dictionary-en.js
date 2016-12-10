@@ -35,6 +35,10 @@ const dictionary_en = [
     category: 'Star Wars characters',
     words: ['Jango Fett','Boba Fett','Anakin Skywalker','Luke Skywalker','Han Solo','Chewbacca','Darth Maul','Darth Vader','Jabba the Hutt','Jar Jar Binks','Obi-Wan Kenobi','Yoda','Finn','Kylo Ren','Darth Sidious']
   },
+  {
+    category: 'Colors',
+    words: ['Red','Green','Black','Blue','Yellow','White','Grey','Pink','Orange','Purple','Brown','Violet','Turquoise']
+  },
 ];
 
 export default dictionary_en;

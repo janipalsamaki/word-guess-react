@@ -59,6 +59,10 @@ const dictionary_fi = [
     category: 'Star Wars -hahmot',
     words: ['Jango Fett','Boba Fett','Anakin Skywalker','Luke Skywalker','Han Solo','Chewbacca','Darth Maul','Darth Vader','Jabba the Hutt','Jar Jar Binks','Obi-Wan Kenobi','Yoda','Finn','Kylo Ren','Darth Sidious']
   },
+  {
+    category: 'Värit',
+    words: ['Punainen','Vihreä','Sininen','Musta','Valkoinen','Keltainen','Vaaleanpunainen','Oranssi','Turkoosi','Violetti','Harmaa','Ruskea']
+  },
 ];
 
 export default dictionary_fi;

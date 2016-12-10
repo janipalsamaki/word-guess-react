@@ -6,8 +6,9 @@ import GuessesLeft from '../../components/GuessesLeft/GuessesLeft';
 import LanguageSwitcher from '../../components/LanguageSwitcher/LanguageSwitcher';
 import NewWord from '../../components/NewWord/NewWord';
 import Word from '../../components/Word/Word';
-import dictionary_fi from '../../dictionaries/dictionary-fi';
 import dictionary_en from '../../dictionaries/dictionary-en';
+import dictionary_fi from '../../dictionaries/dictionary-fi';
+import dictionary_es from '../../dictionaries/dictionary-es';
 import './App.css';
 
 class App extends Component {
@@ -21,12 +22,20 @@ class App extends Component {
   }
 
   initialState(language = 'gb') {
-    const alphabet = language === 'gb' ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ';
+    const alphabet = language === 'gb'
+      ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+      : language === 'fi'
+      ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
+      : language === 'es'
+      ? 'AÁBCDEÉFGHIÍJKLMNÑOÓPQRSTUÚÜVWXYZ'
+      : 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
     const letters = [...alphabet].map(letter => ({letter, disabled: false}));
 
     const dictionaries = new Map();
     dictionaries.set('fi', dictionary_fi);
     dictionaries.set('gb', dictionary_en);
+    dictionaries.set('es', dictionary_es);
 
     const dictionary = dictionaries.get(language);
     const category = this.randomCategory(dictionary);
@@ -102,7 +111,7 @@ class App extends Component {
   }
 
   render() {
-    const languages = ['fi', 'gb'];
+    const languages = ['fi', 'gb', 'es'];
 
     return (
       <div>
