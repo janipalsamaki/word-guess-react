@@ -11,5 +11,5 @@
 }
 
 .Word .Letter[disabled], .Word .Letter.dash {
-  color: #D0D7F9;
+  color: white;
 }
