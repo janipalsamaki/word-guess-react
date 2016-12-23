@@ -20,6 +20,10 @@ const dictionary_en = [
     words: ['Lion','Camel','Elephant','Giraffe','Zebra','Rhino','Hippo','Antelope','Hyena','Scorpion','Baboon','Gorilla','Chimpanzee','Constrictor']
   },
   {
+    category: 'Food',
+    words: ['Pasta','Pizza','Lasagne','Meatballs','Chicken soup','Fish soup','Hamburger','Cooked salmon']
+  },
+  {
     category: 'Drinks',
     words: ['Lemonade','Strawberry juice','Apple juice','Water','Milk','Buttermilk','Orange juice','Pineapple juice','Mineral water','Beer','Whiskey','Rum','Kvass']
   },
