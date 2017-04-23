@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Letter.css';
 
 const Letter = props => {
@@ -12,9 +13,9 @@ const Letter = props => {
 };
 
 Letter.propTypes = {
-  disabled: React.PropTypes.bool.isRequired,
-  letter: React.PropTypes.string.isRequired,
-  onClick: React.PropTypes.func.isRequired
+  disabled: PropTypes.bool.isRequired,
+  letter: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 export default Letter

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './NewWord.css';
 
 const NewWord = props => {
@@ -10,7 +11,7 @@ const NewWord = props => {
 };
 
 NewWord.propTypes = {
-  onClick: React.PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired
 };
 
 export default NewWord

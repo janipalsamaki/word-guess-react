@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Letter from '../Letter/Letter';
 import './Alphabet.css';
 
@@ -13,8 +14,8 @@ const Alphabet = props => {
 };
 
 Alphabet.propTypes = {
-  letters: React.PropTypes.array.isRequired,
-  onClick: React.PropTypes.func.isRequired
+  letters: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 export default Alphabet

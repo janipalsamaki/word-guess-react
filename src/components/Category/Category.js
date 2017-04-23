@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Category.css';
 
 const Category = props => {
@@ -8,7 +9,7 @@ const Category = props => {
 };
 
 Category.propTypes = {
-  category: React.PropTypes.object.isRequired
+  category: PropTypes.object.isRequired
 };
 
 export default Category

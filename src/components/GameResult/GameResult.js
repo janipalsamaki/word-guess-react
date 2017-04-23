@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './GameResult.css';
 
 const GameResult = props => {
@@ -19,8 +20,8 @@ const GameResult = props => {
 };
 
 GameResult.propTypes = {
-  guessedTheWord: React.PropTypes.bool.isRequired,
-  guessesLeft: React.PropTypes.number.isRequired
+  guessedTheWord: PropTypes.bool.isRequired,
+  guessesLeft: PropTypes.number.isRequired
 };
 
 export default GameResult

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Flag from '../Flag/Flag';
 import './LanguageSwitcher.css';
 
@@ -13,8 +14,8 @@ const LanguageSwitcher = props => {
 };
 
 LanguageSwitcher.propTypes = {
-  languages: React.PropTypes.array.isRequired,
-  onClick: React.PropTypes.func.isRequired
+  languages: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 export default LanguageSwitcher

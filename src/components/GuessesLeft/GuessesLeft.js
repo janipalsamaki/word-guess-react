@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './GuessesLeft.css';
 
 const GuessesLeft = props => {
@@ -8,7 +9,7 @@ const GuessesLeft = props => {
 };
 
 GuessesLeft.propTypes = {
-  guessesLeft: React.PropTypes.number.isRequired
+  guessesLeft: PropTypes.number.isRequired
 };
 
 export default GuessesLeft

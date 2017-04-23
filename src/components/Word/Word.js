@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Letter from '../Letter/Letter';
 import './Word.css';
 
@@ -13,7 +14,7 @@ const Word = props => {
 };
 
 Word.propTypes = {
-  word: React.PropTypes.array.isRequired
+  word: PropTypes.array.isRequired
 };
 
 export default Word

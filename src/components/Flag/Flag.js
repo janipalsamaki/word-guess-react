@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../../../node_modules/flag-icon-css/css/flag-icon.min.css';
 import './Flag.css';
 
@@ -12,8 +13,8 @@ const Flag = props => {
 };
 
 Flag.propTypes = {
-  language: React.PropTypes.string.isRequired,
-  onClick: React.PropTypes.func.isRequired
+  language: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 export default Flag
