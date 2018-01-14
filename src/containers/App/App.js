@@ -134,7 +134,7 @@ class App extends Component {
 
     return (
       <div>
-        <Alphabet letters={this.state.letters} onClick={this.selectLetter} onKeyPress={this.handleKeyPress} />
+        <Alphabet letters={this.state.letters} onClick={this.selectLetter} />
         <Category category={this.state.category} />
         <Word word={this.state.word} />
         <div className="footer">
