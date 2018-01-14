@@ -19,6 +19,7 @@ class App extends Component {
     this.changeLanguage = this.changeLanguage.bind(this);
     this.selectLetter = this.selectLetter.bind(this);
     this.startNewGame = this.startNewGame.bind(this);
+    this.addKeyPressListener();
   }
 
   initialState(language = 'gb') {
@@ -33,6 +34,7 @@ class App extends Component {
     const guessedTheWord = false;
 
     return {
+      alphabet,
       letters,
       language,
       category,
@@ -117,12 +119,22 @@ class App extends Component {
     this.setState(this.initialState(this.state.language));
   }
 
+  addKeyPressListener() {
+    document.addEventListener('keydown', (event) => {
+      const letter = event.key.toUpperCase();
+
+      if (this.state.alphabet.includes(letter)) {
+        this.selectLetter(letter);
+      }
+    });
+  }
+
   render() {
     const languages = ['fi', 'gb', 'es'];
 
     return (
       <div>
-        <Alphabet letters={this.state.letters} onClick={this.selectLetter} />
+        <Alphabet letters={this.state.letters} onClick={this.selectLetter} onKeyPress={this.handleKeyPress} />
         <Category category={this.state.category} />
         <Word word={this.state.word} />
         <div className="footer">
