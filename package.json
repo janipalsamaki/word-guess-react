@@ -9,12 +9,12 @@
   "author": "Jani Palsamäki",
   "license": "ISC",
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "react-scripts": "1.0.17"
   },
   "dependencies": {
-    "flag-icon-css": "^2.8.0",
-    "react": "^15.5.0",
-    "react-dom": "^15.5.0"
+    "flag-icon-css": "^2.9.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
