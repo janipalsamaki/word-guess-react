@@ -9,7 +9,7 @@
   "author": "Jani Palsamäki",
   "license": "ISC",
   "devDependencies": {
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.1.1"
   },
   "dependencies": {
     "flag-icon-css": "^2.9.0",
