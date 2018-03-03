@@ -1,6 +1,6 @@
 {
   "name": "word-guess-react",
-  "homepage": "http://palsamaki.com/react/word-guess/",
+  "homepage": "https://janipalsamaki.github.io/word-guess-react",
   "version": "0.1.0",
   "repository": {
     "type": "git",
@@ -13,10 +13,13 @@
   },
   "dependencies": {
     "flag-icon-css": "^2.9.0",
+    "gh-pages": "^1.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
