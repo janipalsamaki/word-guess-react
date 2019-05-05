@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import Alphabet from '../../components/Alphabet/Alphabet'
 import Category from '../../components/Category/Category'
 import GameResult from '../../components/GameResult/GameResult'
@@ -133,7 +133,7 @@ class App extends Component {
     const languages = ['fi', 'gb', 'es']
 
     return (
-      <div>
+      <Fragment>
         <Alphabet letters={this.state.letters} onClick={this.selectLetter} />
         <Category category={this.state.category} />
         <Word word={this.state.word} />
@@ -143,7 +143,7 @@ class App extends Component {
           <LanguageSwitcher languages={languages} onClick={this.changeLanguage} />
           <NewWord onClick={this.startNewGame} />
         </div>
-      </div>
+      </Fragment>
     )
   }
 }
