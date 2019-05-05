@@ -63,6 +63,6 @@ const dictionary_fi = [
     category: 'Värit',
     words: ['Punainen','Vihreä','Sininen','Musta','Valkoinen','Keltainen','Vaaleanpunainen','Oranssi','Turkoosi','Violetti','Harmaa','Ruskea']
   },
-];
+]
 
-export default dictionary_fi;
+export default dictionary_fi

@@ -43,6 +43,6 @@ const dictionary_en = [
     category: 'Colors',
     words: ['Red','Green','Black','Blue','Yellow','White','Grey','Pink','Orange','Purple','Brown','Violet','Turquoise']
   },
-];
+]
 
-export default dictionary_en;
+export default dictionary_en

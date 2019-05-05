@@ -7,6 +7,6 @@ const dictionary_es = [
     category: 'Días de la semana',
     words: ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo']
   },
-];
+]
 
-export default dictionary_es;
+export default dictionary_es

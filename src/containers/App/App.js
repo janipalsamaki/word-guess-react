@@ -1,37 +1,37 @@
-import React, { Component } from 'react';
-import Alphabet from '../../components/Alphabet/Alphabet';
-import Category from '../../components/Category/Category';
-import GameResult from '../../components/GameResult/GameResult';
-import GuessesLeft from '../../components/GuessesLeft/GuessesLeft';
-import LanguageSwitcher from '../../components/LanguageSwitcher/LanguageSwitcher';
-import NewWord from '../../components/NewWord/NewWord';
-import Word from '../../components/Word/Word';
-import dictionary_en from '../../dictionaries/dictionary-en';
-import dictionary_fi from '../../dictionaries/dictionary-fi';
-import dictionary_es from '../../dictionaries/dictionary-es';
-import './App.css';
+import React, { Component } from 'react'
+import Alphabet from '../../components/Alphabet/Alphabet'
+import Category from '../../components/Category/Category'
+import GameResult from '../../components/GameResult/GameResult'
+import GuessesLeft from '../../components/GuessesLeft/GuessesLeft'
+import LanguageSwitcher from '../../components/LanguageSwitcher/LanguageSwitcher'
+import NewWord from '../../components/NewWord/NewWord'
+import Word from '../../components/Word/Word'
+import dictionary_en from '../../dictionaries/dictionary-en'
+import dictionary_fi from '../../dictionaries/dictionary-fi'
+import dictionary_es from '../../dictionaries/dictionary-es'
+import './App.css'
 
 class App extends Component {
 
   constructor(props) {
-    super(props);
-    this.state = this.initialState();
-    this.changeLanguage = this.changeLanguage.bind(this);
-    this.selectLetter = this.selectLetter.bind(this);
-    this.startNewGame = this.startNewGame.bind(this);
-    this.addKeyPressListener();
+    super(props)
+    this.state = this.initialState()
+    this.changeLanguage = this.changeLanguage.bind(this)
+    this.selectLetter = this.selectLetter.bind(this)
+    this.startNewGame = this.startNewGame.bind(this)
+    this.addKeyPressListener()
   }
 
   initialState(language = 'gb') {
-    const alphabet = this.getAlphabet(language);
-    const letters = [...alphabet].map(letter => ({letter, disabled: false}));
-    const dictionaries = this.getDictionaries();
-    const dictionary = dictionaries.get(language);
-    const category = this.randomCategory(dictionary);
-    const word = [...this.randomWord(category)].map(letter => ({letter, disabled: false}));
-    const guessedLetters = new Set();
-    const guessesLeft = 5;
-    const guessedTheWord = false;
+    const alphabet = this.getAlphabet(language)
+    const letters = [...alphabet].map(letter => ({letter, disabled: false}))
+    const dictionaries = this.getDictionaries()
+    const dictionary = dictionaries.get(language)
+    const category = this.randomCategory(dictionary)
+    const word = [...this.randomWord(category)].map(letter => ({letter, disabled: false}))
+    const guessedLetters = new Set()
+    const guessesLeft = 5
+    const guessedTheWord = false
 
     return {
       alphabet,
@@ -42,7 +42,7 @@ class App extends Component {
       guessedLetters,
       guessesLeft,
       guessedTheWord
-    };
+    }
   }
 
   getAlphabet(language) {
@@ -52,85 +52,85 @@ class App extends Component {
       ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
       : language === 'es'
       ? 'AÁBCDEÉFGHIÍJKLMNÑOÓPQRSTUÚÜVWXYZ'
-      : 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      : 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   }
 
   getDictionaries() {
-    const dictionaries = new Map();
-    dictionaries.set('fi', dictionary_fi);
-    dictionaries.set('gb', dictionary_en);
-    dictionaries.set('es', dictionary_es);
+    const dictionaries = new Map()
+    dictionaries.set('fi', dictionary_fi)
+    dictionaries.set('gb', dictionary_en)
+    dictionaries.set('es', dictionary_es)
 
-    return dictionaries;
+    return dictionaries
   }
 
   randomCategory(dictionary) {
-    const categories = [];
+    const categories = []
 
     for (const entry of dictionary.entries()) {
-      let [index, object] = entry;
-      categories.push(object);
+      let [index, object] = entry
+      categories.push(object)
     }
 
-    return categories[Math.floor(Math.random() * categories.length)];
+    return categories[Math.floor(Math.random() * categories.length)]
   }
 
   randomWord(category) {
-    return category.words[Math.floor(Math.random() * category.words.length)].toUpperCase();
+    return category.words[Math.floor(Math.random() * category.words.length)].toUpperCase()
   }
 
   changeLanguage(language) {
-    this.setState(this.initialState(language));
+    this.setState(this.initialState(language))
   }
 
   selectLetter(selectedLetter) {
-    this.updateGameStatus(this.state, selectedLetter);
+    this.updateGameStatus(this.state, selectedLetter)
   }
 
   updateGameStatus(state, selectedLetter) {
     if (state.guessesLeft > 0 && !state.guessedTheWord) {
-      const nextState = {...state};
-      const alreadyGuessedLetter = state.guessedLetters.has(selectedLetter);
+      const nextState = {...state}
+      const alreadyGuessedLetter = state.guessedLetters.has(selectedLetter)
 
       if (!alreadyGuessedLetter) {
-        nextState.guessedLetters.add(selectedLetter);
-        nextState.letters.find(letter => letter.letter === selectedLetter).disabled = true;
+        nextState.guessedLetters.add(selectedLetter)
+        nextState.letters.find(letter => letter.letter === selectedLetter).disabled = true
       }
 
       const guessedTheWord = nextState.word
         .filter(letter => !['-', ' '].includes(letter.letter))
-        .every(letter => nextState.guessedLetters.has(letter.letter));
+        .every(letter => nextState.guessedLetters.has(letter.letter))
 
-      const lettersFoundInWord = nextState.word.filter(letter => letter.letter === selectedLetter).length > 0;
+      const lettersFoundInWord = nextState.word.filter(letter => letter.letter === selectedLetter).length > 0
 
       if (guessedTheWord) {
-        nextState.guessedTheWord = true;
+        nextState.guessedTheWord = true
       } else if (!alreadyGuessedLetter && !lettersFoundInWord) {
-        nextState.guessesLeft--;
+        nextState.guessesLeft--
       }
 
-      nextState.word.forEach(letter => letter.letter === selectedLetter ? letter.disabled = true : '');
+      nextState.word.forEach(letter => letter.letter === selectedLetter ? letter.disabled = true : '')
 
-      this.setState(nextState);
+      this.setState(nextState)
     }
   }
 
   startNewGame() {
-    this.setState(this.initialState(this.state.language));
+    this.setState(this.initialState(this.state.language))
   }
 
   addKeyPressListener() {
     document.addEventListener('keydown', (event) => {
-      const letter = event.key.toUpperCase();
+      const letter = event.key.toUpperCase()
 
       if (this.state.alphabet.includes(letter)) {
-        this.selectLetter(letter);
+        this.selectLetter(letter)
       }
-    });
+    })
   }
 
   render() {
-    const languages = ['fi', 'gb', 'es'];
+    const languages = ['fi', 'gb', 'es']
 
     return (
       <div>
@@ -144,8 +144,8 @@ class App extends Component {
           <NewWord onClick={this.startNewGame} />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

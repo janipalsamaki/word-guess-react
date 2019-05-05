@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './GameResult.css';
+import React from 'react'
+import PropTypes from 'prop-types'
+import './GameResult.css'
 
 const GameResult = props => {
-  const inProgress = <i className="fa fa-smile-o" aria-hidden="true"></i>;
-  const lastChance = <i className="fa fa-meh-o" aria-hidden="true"></i>;
-  const lost = <i className="fa fa-frown-o" aria-hidden="true"></i>;
-  const won = <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>;
+  const inProgress = <i className="fa fa-smile-o" aria-hidden="true"></i>
+  const lastChance = <i className="fa fa-meh-o" aria-hidden="true"></i>
+  const lost = <i className="fa fa-frown-o" aria-hidden="true"></i>
+  const won = <i className="fa fa-thumbs-o-up" aria-hidden="true"></i>
 
   return (
     props.guessedTheWord
@@ -17,11 +17,11 @@ const GameResult = props => {
       ? <div className="GameResult">{lastChance}</div>
       : <div className="GameResult">{lost}</div>
   )
-};
+}
 
 GameResult.propTypes = {
   guessedTheWord: PropTypes.bool.isRequired,
   guessesLeft: PropTypes.number.isRequired
-};
+}
 
 export default GameResult
