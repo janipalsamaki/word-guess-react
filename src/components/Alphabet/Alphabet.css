@@ -1,9 +1,9 @@
-.Alphabet .Letter {
+.Alphabet .Letter,
+.Alphabet .Letter button {
   cursor: pointer;
 }
 
 @media screen and (min-width: 1200px) {
-
   .Alphabet .Letter:hover {
     transition: all 0.2s;
     transform: rotate(-3deg) scale(1.1);
