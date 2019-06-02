@@ -8,3 +8,9 @@
   background: transparent;
   border: none;
 }
+
+@media only screen and (max-width: 600px) {
+  .NewWord {
+    padding: 0.3rem;
+  }
+}

@@ -14,6 +14,12 @@ body {
   font-size: larger;
 }
 
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 0.1rem;
+  }
+}
+
 footer .fa {
   color: white;
   float: left;
@@ -24,6 +30,13 @@ footer .fa {
   display: inline-block;
   border-radius: 10px;
   margin-top: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  footer {
+    margin: auto;
+    width: 50%;
+  }
 }
 
 .sr-only {

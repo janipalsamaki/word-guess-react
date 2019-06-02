@@ -3,3 +3,9 @@
   color: white;
   padding: 1rem;
 }
+
+@media only screen and (max-width: 600px) {
+  .Category {
+    padding: 0.5rem;
+  }
+}

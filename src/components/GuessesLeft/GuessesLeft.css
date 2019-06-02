@@ -5,3 +5,9 @@
   cursor: default;
   padding: 1rem;
 }
+
+@media only screen and (max-width: 600px) {
+  .GuessesLeft {
+    padding: 0.3rem;
+  }
+}
