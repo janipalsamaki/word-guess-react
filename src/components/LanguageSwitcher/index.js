@@ -1,14 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Flag from '../Flag/Flag'
+import Flag from '../Flag'
 import './LanguageSwitcher.css'
 
-const LanguageSwitcher = props => {
+const LanguageSwitcher = ({ languages, onClick }) => {
   return (
     <div className="LanguageSwitcher">
-      {[...props.languages].map(
-        language => <Flag key={language} language={language} onClick={props.onClick}>{language}</Flag>)
-      }
+      {[...languages].map(language => (
+        <Flag key={language} language={language} onClick={onClick}>
+          {language}
+        </Flag>
+      ))}
     </div>
   )
 }

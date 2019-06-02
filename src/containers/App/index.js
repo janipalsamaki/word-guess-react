@@ -1,18 +1,17 @@
 import React, { Component, Fragment } from 'react'
-import Alphabet from '../../components/Alphabet/Alphabet'
-import Category from '../../components/Category/Category'
-import GameResult from '../../components/GameResult/GameResult'
-import GuessesLeft from '../../components/GuessesLeft/GuessesLeft'
-import LanguageSwitcher from '../../components/LanguageSwitcher/LanguageSwitcher'
-import NewWord from '../../components/NewWord/NewWord'
-import Word from '../../components/Word/Word'
+import Alphabet from '../../components/Alphabet'
+import Category from '../../components/Category'
+import GameResult from '../../components/GameResult'
+import GuessesLeft from '../../components/GuessesLeft'
+import LanguageSwitcher from '../../components/LanguageSwitcher'
+import NewWord from '../../components/NewWord'
+import Word from '../../components/Word'
 import dictionary_en from '../../dictionaries/dictionary-en'
 import dictionary_fi from '../../dictionaries/dictionary-fi'
 import dictionary_es from '../../dictionaries/dictionary-es'
 import './App.css'
 
 class App extends Component {
-
   constructor(props) {
     super(props)
     this.state = this.initialState()
@@ -24,11 +23,14 @@ class App extends Component {
 
   initialState(language = 'gb') {
     const alphabet = this.getAlphabet(language)
-    const letters = [...alphabet].map(letter => ({letter, disabled: false}))
+    const letters = [...alphabet].map(letter => ({ letter, disabled: false }))
     const dictionaries = this.getDictionaries()
     const dictionary = dictionaries.get(language)
     const category = this.randomCategory(dictionary)
-    const word = [...this.randomWord(category)].map(letter => ({letter, disabled: false}))
+    const word = [...this.randomWord(category)].map(letter => ({
+      letter,
+      disabled: false
+    }))
     const guessedLetters = new Set()
     const guessesLeft = 5
     const guessedTheWord = false
@@ -76,7 +78,9 @@ class App extends Component {
   }
 
   randomWord(category) {
-    return category.words[Math.floor(Math.random() * category.words.length)].toUpperCase()
+    return category.words[
+      Math.floor(Math.random() * category.words.length)
+    ].toUpperCase()
   }
 
   changeLanguage(language) {
@@ -89,19 +93,23 @@ class App extends Component {
 
   updateGameStatus(state, selectedLetter) {
     if (state.guessesLeft > 0 && !state.guessedTheWord) {
-      const nextState = {...state}
+      const nextState = { ...state }
       const alreadyGuessedLetter = state.guessedLetters.has(selectedLetter)
 
       if (!alreadyGuessedLetter) {
         nextState.guessedLetters.add(selectedLetter)
-        nextState.letters.find(letter => letter.letter === selectedLetter).disabled = true
+        nextState.letters.find(
+          letter => letter.letter === selectedLetter
+        ).disabled = true
       }
 
       const guessedTheWord = nextState.word
         .filter(letter => !['-', ' '].includes(letter.letter))
         .every(letter => nextState.guessedLetters.has(letter.letter))
 
-      const lettersFoundInWord = nextState.word.filter(letter => letter.letter === selectedLetter).length > 0
+      const lettersFoundInWord =
+        nextState.word.filter(letter => letter.letter === selectedLetter)
+          .length > 0
 
       if (guessedTheWord) {
         nextState.guessedTheWord = true
@@ -109,7 +117,9 @@ class App extends Component {
         nextState.guessesLeft--
       }
 
-      nextState.word.forEach(letter => letter.letter === selectedLetter ? letter.disabled = true : '')
+      nextState.word.forEach(letter =>
+        letter.letter === selectedLetter ? (letter.disabled = true) : ''
+      )
 
       this.setState(nextState)
     }
@@ -120,7 +130,7 @@ class App extends Component {
   }
 
   addKeyPressListener() {
-    document.addEventListener('keydown', (event) => {
+    document.addEventListener('keydown', event => {
       const letter = event.key.toUpperCase()
 
       if (this.state.alphabet.includes(letter)) {
@@ -134,13 +144,26 @@ class App extends Component {
 
     return (
       <Fragment>
+        <p className="sr-only">
+          Word guess. Try to guess the word from the given category. Use
+          keyboard to guess letters.
+        </p>
         <Alphabet letters={this.state.letters} onClick={this.selectLetter} />
         <Category category={this.state.category} />
-        <Word word={this.state.word} />
+        <Word
+          word={this.state.word}
+          guessedTheWord={this.state.guessedTheWord}
+        />
         <div className="footer">
           <GuessesLeft guessesLeft={this.state.guessesLeft} />
-          <GameResult guessedTheWord={this.state.guessedTheWord} guessesLeft={this.state.guessesLeft} />
-          <LanguageSwitcher languages={languages} onClick={this.changeLanguage} />
+          <GameResult
+            guessedTheWord={this.state.guessedTheWord}
+            guessesLeft={this.state.guessesLeft}
+          />
+          <LanguageSwitcher
+            languages={languages}
+            onClick={this.changeLanguage}
+          />
           <NewWord onClick={this.startNewGame} />
         </div>
       </Fragment>

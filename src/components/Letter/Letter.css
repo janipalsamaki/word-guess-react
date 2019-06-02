@@ -1,26 +1,38 @@
 .Letter {
   border-radius: 10%;
-  padding: 1em;
-  margin: 0.2em;
-  height: 1em;
-  width: 1em;
+  padding: 0.8rem;
+  margin: 0.2rem;
+  height: 1rem;
+  width: 1rem;
   text-align: center;
   list-style-type: none;
   display: inline-block;
   color: white;
 
-  box-shadow:
-    0 2px 8px rgba(0,0,0,0.5), /* Exterior Shadow */
-    inset 0 1px rgba(255,255,255,0.3), /* Top light Line */
-    inset 0 10px rgba(255,255,255,0.2), /* Top Light Shadow */
-    inset 0 10px 20px rgba(255,255,255,0.25), /* Sides Light Shadow */
-    inset 0 -15px 30px rgba(0,0,0,0.1); /* Dark Background */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5),
+    /* Exterior Shadow */ inset 0 1px rgba(255, 255, 255, 0.3),
+    /* Top light Line */ inset 0 10px rgba(255, 255, 255, 0.2),
+    /* Top Light Shadow */ inset 0 10px 20px rgba(255, 255, 255, 0.25),
+    /* Sides Light Shadow */ inset 0 -15px 30px rgba(0, 0, 0, 0.1); /* Dark Background */
+}
+
+@media only screen and (max-width: 600px) {
+  .Letter {
+    padding: 0.5rem;
+  }
+}
+
+.Letter button {
+  color: white;
+  background: transparent;
+  border: none;
 }
 
 .Letter[disabled] {
   box-shadow: none;
 }
 
-.space, .dash {
+.space,
+.dash {
   border: none !important;
 }

@@ -1,15 +1,20 @@
+.Word .Letter button,
 .Word .Letter {
   color: transparent;
   background-color: transparent;
   border: solid white;
-  border-width: 0 0 0.1em 0;
+  border-width: 0 0 3px 0;
   border-radius: 0;
   cursor: default;
-  padding: 0.1em;
-  margin: 0.12em;
   box-shadow: none;
+  padding: 0 0 0.2rem 0;
 }
 
-.Word .Letter[disabled], .Word .Letter.dash {
+.Word .Letter button {
+  border: none;
+}
+
+.Word .Letter[disabled] button,
+.Word .Letter.dash {
   color: white;
 }

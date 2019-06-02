@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import '../../../node_modules/flag-icon-css/css/flag-icon.min.css'
 import './Flag.css'
 
-const Flag = props => {
-  const flagClasses = `flag-icon flag-icon-${props.language}`
+const Flag = ({ language, onClick }) => {
+  const flagClasses = `flag-icon flag-icon-${language}`
   return (
-    <div className="Flag" onClick={() => props.onClick(props.language)}>
+    <div className="Flag" onClick={() => onClick(language)}>
       <span className={flagClasses}>&nbsp;</span>
     </div>
   )
