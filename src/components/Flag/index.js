@@ -4,11 +4,16 @@ import '../../../node_modules/flag-icon-css/css/flag-icon.min.css'
 import './Flag.css'
 
 const Flag = ({ language, onClick }) => {
+  const ariaLabel = `Change language to "${language}"`
   const flagClasses = `flag-icon flag-icon-${language}`
   return (
-    <div className="Flag" onClick={() => onClick(language)}>
+    <button
+      className="Flag"
+      onClick={() => onClick(language)}
+      aria-label={ariaLabel}
+    >
       <span className={flagClasses}>&nbsp;</span>
-    </div>
+    </button>
   )
 }
 

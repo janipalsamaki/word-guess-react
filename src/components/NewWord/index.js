@@ -4,9 +4,13 @@ import './NewWord.css'
 
 const NewWord = ({ onClick }) => {
   return (
-    <div className="NewWord" onClick={() => onClick()}>
+    <button
+      className="NewWord"
+      onClick={() => onClick()}
+      aria-label="Start a new game"
+    >
       <i className="fa fa-arrow-right" aria-hidden="true" />
-    </div>
+    </button>
   )
 }
 

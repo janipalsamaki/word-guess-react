@@ -9,13 +9,24 @@ const GameResult = ({ guessedTheWord, guessesLeft }) => {
   const won = <i className="fa fa-thumbs-o-up" aria-hidden="true" />
 
   return guessedTheWord ? (
-    <div className="GameResult">{won}</div>
+    <div className="GameResult" aria-label="You won the game! Congratulations!">
+      {won}
+    </div>
   ) : guessesLeft > 1 ? (
-    <div className="GameResult">{inProgress}</div>
+    <div className="GameResult" aria-label="Game is in progress.">
+      {inProgress}
+    </div>
   ) : guessesLeft === 1 ? (
-    <div className="GameResult">{lastChance}</div>
+    <div
+      className="GameResult"
+      aria-label="You can guess wrong only one more time."
+    >
+      {lastChance}
+    </div>
   ) : (
-    <div className="GameResult">{lost}</div>
+    <div className="GameResult" aria-label="You lost the game. Try again!">
+      {lost}
+    </div>
   )
 }
 

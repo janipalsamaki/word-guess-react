@@ -2,4 +2,6 @@
   cursor: pointer;
   display: inline-block;
   padding: 1rem;
+  background: transparent;
+  border: none;
 }

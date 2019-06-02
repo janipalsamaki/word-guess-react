@@ -3,7 +3,13 @@ import PropTypes from 'prop-types'
 import './GuessesLeft.css'
 
 const GuessesLeft = ({ guessesLeft }) => {
-  return <div className="GuessesLeft">{guessesLeft}</div>
+  const ariaLabel = `Guesses left: ${guessesLeft}`
+
+  return (
+    <div className="GuessesLeft" aria-label={ariaLabel}>
+      {guessesLeft}
+    </div>
+  )
 }
 
 GuessesLeft.propTypes = {
