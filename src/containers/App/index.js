@@ -145,8 +145,8 @@ class App extends Component {
     return (
       <Fragment>
         <p className="sr-only">
-          Word guess. Try to guess the word from the given category. Use
-          keyboard to guess letters.
+          Welcome to play word guess game. Try to guess the word from the given
+          category. Use keyboard to guess the letters.
         </p>
         <Alphabet letters={this.state.letters} onClick={this.selectLetter} />
         <Category category={this.state.category} />
