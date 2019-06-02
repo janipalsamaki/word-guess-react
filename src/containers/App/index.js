@@ -48,13 +48,15 @@ class App extends Component {
   }
 
   getAlphabet(language) {
+    const defaultAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
     return language === 'gb'
-      ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+      ? defaultAlphabet
       : language === 'fi'
       ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'
       : language === 'es'
       ? 'AÁBCDEÉFGHIÍJKLMNÑOÓPQRSTUÚÜVWXYZ'
-      : 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+      : defaultAlphabet
   }
 
   getDictionaries() {
