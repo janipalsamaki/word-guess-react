@@ -18,6 +18,7 @@
 
 @media only screen and (max-width: 600px) {
   .Letter {
+    margin: 0.1rem;
     padding: 0.2rem;
   }
 }
