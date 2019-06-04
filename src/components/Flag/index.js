@@ -6,6 +6,7 @@ import './Flag.css'
 const Flag = ({ language, onClick }) => {
   const ariaLabel = `Change language to "${language}"`
   const flagClasses = `flag-icon flag-icon-${language}`
+
   return (
     <button
       className="Flag"
