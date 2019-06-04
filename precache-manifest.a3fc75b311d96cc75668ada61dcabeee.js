@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e179176e5a7828f62ee93ce271c05c21",
+    "revision": "3f90037ad981ea7519cd92ec778e7b94",
     "url": "/word-guess-react/index.html"
   },
   {
@@ -8,15 +8,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/word-guess-react/static/css/2.8622f22e.chunk.css"
   },
   {
-    "revision": "bc3e51182d805f7db073",
-    "url": "/word-guess-react/static/css/main.20263517.chunk.css"
+    "revision": "27a533870114b2a872ba",
+    "url": "/word-guess-react/static/css/main.77383f8b.chunk.css"
   },
   {
     "revision": "9e1d0f013fc228fe1263",
     "url": "/word-guess-react/static/js/2.bbb145e1.chunk.js"
   },
   {
-    "revision": "bc3e51182d805f7db073",
+    "revision": "27a533870114b2a872ba",
     "url": "/word-guess-react/static/js/main.7ceb6243.chunk.js"
   },
   {

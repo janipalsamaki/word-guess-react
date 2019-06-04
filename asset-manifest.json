@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/word-guess-react/static/css/main.20263517.chunk.css",
+    "main.css": "/word-guess-react/static/css/main.77383f8b.chunk.css",
     "main.js": "/word-guess-react/static/js/main.7ceb6243.chunk.js",
     "main.js.map": "/word-guess-react/static/js/main.7ceb6243.chunk.js.map",
     "runtime~main.js": "/word-guess-react/static/js/runtime~main.53f56915.js",
@@ -9,10 +9,10 @@
     "static/js/2.bbb145e1.chunk.js": "/word-guess-react/static/js/2.bbb145e1.chunk.js",
     "static/js/2.bbb145e1.chunk.js.map": "/word-guess-react/static/js/2.bbb145e1.chunk.js.map",
     "index.html": "/word-guess-react/index.html",
-    "precache-manifest.1c21dbaa41563aa5d32c4e473734f7bc.js": "/word-guess-react/precache-manifest.1c21dbaa41563aa5d32c4e473734f7bc.js",
+    "precache-manifest.a3fc75b311d96cc75668ada61dcabeee.js": "/word-guess-react/precache-manifest.a3fc75b311d96cc75668ada61dcabeee.js",
     "service-worker.js": "/word-guess-react/service-worker.js",
     "static/css/2.8622f22e.chunk.css.map": "/word-guess-react/static/css/2.8622f22e.chunk.css.map",
-    "static/css/main.20263517.chunk.css.map": "/word-guess-react/static/css/main.20263517.chunk.css.map",
+    "static/css/main.77383f8b.chunk.css.map": "/word-guess-react/static/css/main.77383f8b.chunk.css.map",
     "static/media/flag-icon.min.css": "/word-guess-react/static/media/zw.ad4ad36d.svg"
   }
 }
