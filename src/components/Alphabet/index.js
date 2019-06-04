@@ -5,21 +5,19 @@ import './Alphabet.css'
 
 const Alphabet = ({ letters, onClick }) => {
   return (
-    <Fragment>
-      <ul className="Alphabet">
-        {[...letters].map((letter, index) => {
-          return (
-            <Letter
-              key={index}
-              letter={letter.letter}
-              disabled={letter.disabled}
-              onClick={onClick}
-              role="button"
-            />
-          )
-        })}
-      </ul>
-    </Fragment>
+    <ul className="Alphabet">
+      {[...letters].map((letter, index) => {
+        return (
+          <Letter
+            key={index}
+            letter={letter.letter}
+            disabled={letter.disabled}
+            onClick={onClick}
+            role="button"
+          />
+        )
+      })}
+    </ul>
   )
 }
 
