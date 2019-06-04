@@ -22,10 +22,15 @@
   }
 }
 
-.Letter button {
+.Letter button,
+.Letter span {
   color: white;
   background: transparent;
   border: none;
+}
+
+.Letter span {
+  user-select: none;
 }
 
 .Letter[disabled] {

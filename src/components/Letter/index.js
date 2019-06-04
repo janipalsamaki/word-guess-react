@@ -6,19 +6,33 @@ const Letter = ({ disabled, letter, onClick, role }) => {
   const classNames =
     letter === ' ' ? 'Letter space' : letter === '-' ? 'Letter dash' : 'Letter'
 
-  const ariaLabel = disabled ? letter : 'blank'
-
   return (
     <li
       className={classNames}
       role={role}
       onClick={() => onClick(letter)}
       disabled={disabled}
-      aria-disabled={disabled}
+      aria-disabled={disabled ? 'true' : null}
     >
-      <button aria-label={ariaLabel}>{letter}</button>
+      {renderLetterElement(letter, role, disabled)}
     </li>
   )
+}
+
+const renderLetterElement = (letter, role, disabled) => {
+  if (role === 'button') {
+    const ariaLabel = disabled ? letter : 'blank'
+
+    return (
+      <button aria-label={ariaLabel} disabled={disabled}>
+        {letter}
+      </button>
+    )
+  } else if (!disabled) {
+    return <span>&nbsp;</span>
+  }
+
+  return <span>{letter}</span>
 }
 
 Letter.propTypes = {
