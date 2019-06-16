@@ -9,8 +9,8 @@ interface Props {
 }
 
 const Word: FunctionComponent<Props> = ({ guessedTheWord, word }) => {
-  const ariaLabel = getAriaLabel(word, guessedTheWord)
-  const ariaDescribedBy = 'word-description'
+  const ariaLabel: string = getAriaLabel(word, guessedTheWord)
+  const ariaDescribedBy: string = 'word-description'
 
   return (
     <Fragment>
@@ -37,7 +37,7 @@ const Word: FunctionComponent<Props> = ({ guessedTheWord, word }) => {
   )
 }
 
-const getAriaLabel = (word: LetterType[], guessedTheWord: boolean) => {
+const getAriaLabel = (word: LetterType[], guessedTheWord: boolean): string => {
   const pronouncedWord = guessedTheWord
     ? word
     : [...word]

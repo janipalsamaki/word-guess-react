@@ -16,7 +16,7 @@ interface State {
   alphabet: string
   letters: LetterType[]
   category: any
-  guessedLetters: Set<any>
+  guessedLetters: Set<string>
   guessedTheWord: boolean
   guessesLeft: number
   language: string
@@ -33,7 +33,7 @@ class App extends Component<{}, State> {
     this.addKeyPressListener()
   }
 
-  initialState(language = 'gb') {
+  initialState(language: string = 'gb'): State {
     const alphabet: string = this.getAlphabet(language)
 
     const letters: LetterType[] = Array.from(alphabet).map(letter => ({
@@ -52,9 +52,9 @@ class App extends Component<{}, State> {
       })
     )
 
-    const guessedLetters = new Set()
-    const guessesLeft = 5
-    const guessedTheWord = false
+    const guessedLetters: Set<string> = new Set()
+    const guessesLeft: number = 5
+    const guessedTheWord: boolean = false
 
     return {
       alphabet,
@@ -69,7 +69,7 @@ class App extends Component<{}, State> {
   }
 
   getAlphabet(language: string): string {
-    const defaultAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    const defaultAlphabet: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
     return language === 'gb'
       ? defaultAlphabet
@@ -118,7 +118,9 @@ class App extends Component<{}, State> {
   updateGameStatus(state: State, selectedLetter: string): void {
     if (state.guessesLeft > 0 && !state.guessedTheWord) {
       const nextState: State = { ...state }
-      const alreadyGuessedLetter = state.guessedLetters.has(selectedLetter)
+      const alreadyGuessedLetter: boolean = state.guessedLetters.has(
+        selectedLetter
+      )
 
       if (!alreadyGuessedLetter) {
         nextState.guessedLetters.add(selectedLetter)
@@ -131,11 +133,11 @@ class App extends Component<{}, State> {
         }
       }
 
-      const guessedTheWord = nextState.word
+      const guessedTheWord: boolean = nextState.word
         .filter(letter => !['-', ' '].includes(letter.letter))
         .every(letter => nextState.guessedLetters.has(letter.letter))
 
-      const lettersFoundInWord =
+      const lettersFoundInWord: boolean =
         nextState.word.filter(letter => letter.letter === selectedLetter)
           .length > 0
 
@@ -159,7 +161,7 @@ class App extends Component<{}, State> {
 
   addKeyPressListener(): void {
     document.addEventListener('keydown', event => {
-      const letter = event.key.toUpperCase()
+      const letter: string = event.key.toUpperCase()
 
       if (this.state.alphabet.includes(letter)) {
         this.selectLetter(letter)
@@ -168,7 +170,7 @@ class App extends Component<{}, State> {
   }
 
   render() {
-    const languages = ['fi', 'gb', 'es']
+    const languages: string[] = ['fi', 'gb', 'es']
 
     return (
       <Fragment>
