@@ -34,7 +34,7 @@
   user-select: none;
 }
 
-.Letter[disabled] {
+.Letter.disabled {
   box-shadow: none;
 }
 

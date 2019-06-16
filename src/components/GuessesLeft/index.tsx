@@ -2,8 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './GuessesLeft.css'
 
-const GuessesLeft = ({ guessesLeft }) => {
-  const ariaLabel = `Guesses left: ${guessesLeft}`
+interface Props {
+  guessesLeft: number
+}
+
+const GuessesLeft: React.FunctionComponent<Props> = ({ guessesLeft }) => {
+  const ariaLabel: string = `Guesses left: ${guessesLeft}`
 
   return (
     <div className="GuessesLeft" aria-label={ariaLabel}>

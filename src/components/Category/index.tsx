@@ -2,9 +2,13 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import './Category.css'
 
-const Category = ({ category }) => {
-  const ariaLabel = `Category: ${category.category}.`
-  const ariaDescribedBy = 'category-description'
+interface Props {
+  category: any
+}
+
+const Category: React.FunctionComponent<Props> = ({ category }) => {
+  const ariaLabel: string = `Category: ${category.category}.`
+  const ariaDescribedBy: string = 'category-description'
 
   return (
     <Fragment>

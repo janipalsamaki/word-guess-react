@@ -2,7 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './GameResult.css'
 
-const GameResult = ({ guessedTheWord, guessesLeft }) => {
+interface Props {
+  guessedTheWord: boolean
+  guessesLeft: number
+}
+
+const GameResult: React.FunctionComponent<Props> = ({
+  guessedTheWord,
+  guessesLeft
+}) => {
   const inProgress = <i className="fa fa-smile-o" aria-hidden="true" />
   const lastChance = <i className="fa fa-meh-o" aria-hidden="true" />
   const lost = <i className="fa fa-frown-o" aria-hidden="true" />

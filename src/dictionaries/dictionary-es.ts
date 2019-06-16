@@ -1,4 +1,6 @@
-const dictionary_es = [
+import { DictionaryType } from './'
+
+const dictionary_es: DictionaryType[] = [
   {
     category: 'Meses del año',
     words: [

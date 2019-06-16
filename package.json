@@ -12,10 +12,17 @@
     "react-scripts": "3.0.0"
   },
   "dependencies": {
+    "@types/classnames": "^2.2.8",
+    "@types/jest": "^24.0.14",
+    "@types/node": "^12.0.8",
+    "@types/react": "^16.8.20",
+    "@types/react-dom": "^16.8.4",
+    "classnames": "^2.2.6",
     "flag-icon-css": "3.3.0",
     "gh-pages": "2.0.1",
     "react": "16.8.6",
-    "react-dom": "16.8.6"
+    "react-dom": "16.8.6",
+    "typescript": "^3.5.2"
   },
   "scripts": {
     "predeploy": "npm run build",

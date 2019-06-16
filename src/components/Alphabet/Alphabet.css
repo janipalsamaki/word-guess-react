@@ -10,7 +10,7 @@
   }
 }
 
-.Alphabet .Letter[disabled] {
+.Alphabet .Letter.disabled {
   background-color: transparent;
   cursor: not-allowed;
   transform: none;

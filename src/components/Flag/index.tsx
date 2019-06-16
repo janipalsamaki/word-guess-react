@@ -3,9 +3,14 @@ import PropTypes from 'prop-types'
 import '../../../node_modules/flag-icon-css/css/flag-icon.min.css'
 import './Flag.css'
 
-const Flag = ({ language, onClick }) => {
-  const ariaLabel = `Change language to "${language}"`
-  const flagClasses = `flag-icon flag-icon-${language}`
+interface Props {
+  language: string
+  onClick(language: string): void
+}
+
+const Flag: React.FunctionComponent<Props> = ({ language, onClick }) => {
+  const ariaLabel: string = `Change language to "${language}"`
+  const flagClasses: string = `flag-icon flag-icon-${language}`
 
   return (
     <button
