@@ -4,6 +4,7 @@ import Category from '../../components/Category'
 import GameResult from '../../components/GameResult'
 import GuessesLeft from '../../components/GuessesLeft'
 import LanguageSwitcher from '../../components/LanguageSwitcher'
+import { LetterType } from '../../components/Letter'
 import NewWord from '../../components/NewWord'
 import Word from '../../components/Word'
 import dictionary_en from '../../dictionaries/dictionary-en'
@@ -11,8 +12,19 @@ import dictionary_fi from '../../dictionaries/dictionary-fi'
 import dictionary_es from '../../dictionaries/dictionary-es'
 import './App.css'
 
-class App extends Component {
-  constructor(props) {
+interface State {
+  alphabet: string
+  letters: LetterType[]
+  category: any
+  guessedLetters: Set<any>
+  guessedTheWord: boolean
+  guessesLeft: number
+  language: string
+  word: LetterType[]
+}
+
+class App extends Component<{}, State> {
+  constructor(props: {}) {
     super(props)
     this.state = this.initialState()
     this.changeLanguage = this.changeLanguage.bind(this)
@@ -22,15 +34,24 @@ class App extends Component {
   }
 
   initialState(language = 'gb') {
-    const alphabet = this.getAlphabet(language)
-    const letters = [...alphabet].map(letter => ({ letter, disabled: false }))
-    const dictionaries = this.getDictionaries()
-    const dictionary = dictionaries.get(language)
-    const category = this.randomCategory(dictionary)
-    const word = [...this.randomWord(category)].map(letter => ({
+    const alphabet: string = this.getAlphabet(language)
+
+    const letters: LetterType[] = Array.from(alphabet).map(letter => ({
       letter,
       disabled: false
     }))
+
+    const dictionaries = this.getDictionaries()
+    const dictionary: Object | undefined = dictionaries.get(language)
+    const category = this.randomCategory(dictionary)
+
+    const word: LetterType[] = Array.from(this.randomWord(category)).map(
+      letter => ({
+        letter,
+        disabled: false
+      })
+    )
+
     const guessedLetters = new Set()
     const guessesLeft = 5
     const guessedTheWord = false
@@ -47,7 +68,7 @@ class App extends Component {
     }
   }
 
-  getAlphabet(language) {
+  getAlphabet(language: string): string {
     const defaultAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
     return language === 'gb'
@@ -59,8 +80,8 @@ class App extends Component {
       : defaultAlphabet
   }
 
-  getDictionaries() {
-    const dictionaries = new Map()
+  getDictionaries(): Map<string, Object> {
+    const dictionaries: Map<string, Object> = new Map()
     dictionaries.set('fi', dictionary_fi)
     dictionaries.set('gb', dictionary_en)
     dictionaries.set('es', dictionary_es)
@@ -68,10 +89,11 @@ class App extends Component {
     return dictionaries
   }
 
-  randomCategory(dictionary) {
+  randomCategory(dictionary: any) {
     const categories = []
 
     for (const entry of dictionary.entries()) {
+      // eslint-disable-next-line
       let [index, object] = entry
       categories.push(object)
     }
@@ -79,30 +101,34 @@ class App extends Component {
     return categories[Math.floor(Math.random() * categories.length)]
   }
 
-  randomWord(category) {
+  randomWord(category: { words: string[] }): string {
     return category.words[
       Math.floor(Math.random() * category.words.length)
     ].toUpperCase()
   }
 
-  changeLanguage(language) {
+  changeLanguage(language: string): void {
     this.setState(this.initialState(language))
   }
 
-  selectLetter(selectedLetter) {
+  selectLetter(selectedLetter: string): void {
     this.updateGameStatus(this.state, selectedLetter)
   }
 
-  updateGameStatus(state, selectedLetter) {
+  updateGameStatus(state: State, selectedLetter: string): void {
     if (state.guessesLeft > 0 && !state.guessedTheWord) {
-      const nextState = { ...state }
+      const nextState: State = { ...state }
       const alreadyGuessedLetter = state.guessedLetters.has(selectedLetter)
 
       if (!alreadyGuessedLetter) {
         nextState.guessedLetters.add(selectedLetter)
-        nextState.letters.find(
+        const letter: LetterType | undefined = nextState.letters.find(
           letter => letter.letter === selectedLetter
-        ).disabled = true
+        )
+
+        if (letter) {
+          letter.disabled = true
+        }
       }
 
       const guessedTheWord = nextState.word
@@ -127,11 +153,11 @@ class App extends Component {
     }
   }
 
-  startNewGame() {
+  startNewGame(): void {
     this.setState(this.initialState(this.state.language))
   }
 
-  addKeyPressListener() {
+  addKeyPressListener(): void {
     document.addEventListener('keydown', event => {
       const letter = event.key.toUpperCase()
 

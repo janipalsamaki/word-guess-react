@@ -1,4 +1,6 @@
-const dictionary_fi = [
+import { DictionaryType } from './'
+
+const dictionary_fi: DictionaryType[] = [
   {
     category: 'Kuukaudet',
     words: [

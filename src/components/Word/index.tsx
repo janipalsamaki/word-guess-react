@@ -1,9 +1,14 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, FunctionComponent } from 'react'
 import PropTypes from 'prop-types'
-import Letter from '../Letter'
+import Letter, { LetterType } from '../Letter'
 import './Word.css'
 
-const Word = ({ guessedTheWord, word }) => {
+interface Props {
+  guessedTheWord: boolean
+  word: LetterType[]
+}
+
+const Word: FunctionComponent<Props> = ({ guessedTheWord, word }) => {
   const ariaLabel = getAriaLabel(word, guessedTheWord)
   const ariaDescribedBy = 'word-description'
 
@@ -32,7 +37,7 @@ const Word = ({ guessedTheWord, word }) => {
   )
 }
 
-const getAriaLabel = (word, guessedTheWord) => {
+const getAriaLabel = (word: LetterType[], guessedTheWord: boolean) => {
   const pronouncedWord = guessedTheWord
     ? word
     : [...word]
