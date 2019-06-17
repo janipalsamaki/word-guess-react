@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import PropTypes from 'prop-types'
 import './GameResult.css'
 
@@ -7,7 +7,7 @@ interface Props {
   guessesLeft: number
 }
 
-const GameResult: React.FunctionComponent<Props> = ({
+const GameResult: FunctionComponent<Props> = ({
   guessedTheWord,
   guessesLeft
 }) => {

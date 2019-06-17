@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import PropTypes from 'prop-types'
 import Letter, { LetterType } from '../Letter'
 import './Alphabet.css'
@@ -8,7 +8,7 @@ interface Props {
   onClick(letter: string): void
 }
 
-const Alphabet: React.FunctionComponent<Props> = ({ letters, onClick }) => (
+const Alphabet: FunctionComponent<Props> = ({ letters, onClick }) => (
   <ul className="Alphabet">
     {[...letters].map((letter, index) => {
       return (

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import './Letter.css'
@@ -10,7 +10,7 @@ interface Props {
   role?: string
 }
 
-const Letter: React.FunctionComponent<Props> = ({
+const Letter: FunctionComponent<Props> = ({
   disabled,
   letter,
   onClick,

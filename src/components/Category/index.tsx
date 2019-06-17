@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, FunctionComponent } from 'react'
 import PropTypes from 'prop-types'
 import './Category.css'
 
@@ -6,7 +6,7 @@ interface Props {
   category: any
 }
 
-const Category: React.FunctionComponent<Props> = ({ category }) => {
+const Category: FunctionComponent<Props> = ({ category }) => {
   const ariaLabel: string = `Category: ${category.category}.`
   const ariaDescribedBy: string = 'category-description'
 
