@@ -48,6 +48,8 @@ const renderLetterElement = (
         {letter}
       </button>
     )
+  } else if (letter === '-') {
+    return <span>{letter}</span>
   } else if (!disabled) {
     return <span>&nbsp;</span>
   }
