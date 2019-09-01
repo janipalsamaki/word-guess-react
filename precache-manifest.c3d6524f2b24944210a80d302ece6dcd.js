@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c9e11ddbcdeb1959343c5f8859e99ab6",
+    "revision": "886fe9aed5891b9b1669a5b532027add",
     "url": "/word-guess-react/index.html"
   },
   {
-    "revision": "2108771de287873e627f",
+    "revision": "07636ac0e935331af0bf",
     "url": "/word-guess-react/static/css/2.8622f22e.chunk.css"
   },
   {
-    "revision": "0d56ecf555ea65741dbd",
+    "revision": "8b54322d80fb0fad8095",
     "url": "/word-guess-react/static/css/main.03f4ef2b.chunk.css"
   },
   {
-    "revision": "2108771de287873e627f",
-    "url": "/word-guess-react/static/js/2.5caf02dc.chunk.js"
+    "revision": "07636ac0e935331af0bf",
+    "url": "/word-guess-react/static/js/2.402fd180.chunk.js"
   },
   {
-    "revision": "0d56ecf555ea65741dbd",
-    "url": "/word-guess-react/static/js/main.c4c8e6ea.chunk.js"
+    "revision": "8b54322d80fb0fad8095",
+    "url": "/word-guess-react/static/js/main.9098e83f.chunk.js"
   },
   {
-    "revision": "8d31757ae42d4c686fe3",
-    "url": "/word-guess-react/static/js/runtime~main.53f56915.js"
+    "revision": "a73c5ef02d42f0a3293a",
+    "url": "/word-guess-react/static/js/runtime~main.56a44fb4.js"
   },
   {
     "revision": "486d25a79ba1ee551360a5d18bfe7a2e",
