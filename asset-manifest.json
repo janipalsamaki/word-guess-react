@@ -1,18 +1,25 @@
 {
   "files": {
     "main.css": "/word-guess-react/static/css/main.03f4ef2b.chunk.css",
-    "main.js": "/word-guess-react/static/js/main.9098e83f.chunk.js",
-    "main.js.map": "/word-guess-react/static/js/main.9098e83f.chunk.js.map",
-    "runtime~main.js": "/word-guess-react/static/js/runtime~main.56a44fb4.js",
-    "runtime~main.js.map": "/word-guess-react/static/js/runtime~main.56a44fb4.js.map",
+    "main.js": "/word-guess-react/static/js/main.6e4a03dd.chunk.js",
+    "main.js.map": "/word-guess-react/static/js/main.6e4a03dd.chunk.js.map",
+    "runtime-main.js": "/word-guess-react/static/js/runtime-main.311f1717.js",
+    "runtime-main.js.map": "/word-guess-react/static/js/runtime-main.311f1717.js.map",
     "static/css/2.8622f22e.chunk.css": "/word-guess-react/static/css/2.8622f22e.chunk.css",
-    "static/js/2.402fd180.chunk.js": "/word-guess-react/static/js/2.402fd180.chunk.js",
-    "static/js/2.402fd180.chunk.js.map": "/word-guess-react/static/js/2.402fd180.chunk.js.map",
+    "static/js/2.48d99330.chunk.js": "/word-guess-react/static/js/2.48d99330.chunk.js",
+    "static/js/2.48d99330.chunk.js.map": "/word-guess-react/static/js/2.48d99330.chunk.js.map",
     "index.html": "/word-guess-react/index.html",
-    "precache-manifest.c3d6524f2b24944210a80d302ece6dcd.js": "/word-guess-react/precache-manifest.c3d6524f2b24944210a80d302ece6dcd.js",
+    "precache-manifest.0e7b59edc0dbe2432809c2e5f44f42e7.js": "/word-guess-react/precache-manifest.0e7b59edc0dbe2432809c2e5f44f42e7.js",
     "service-worker.js": "/word-guess-react/service-worker.js",
     "static/css/2.8622f22e.chunk.css.map": "/word-guess-react/static/css/2.8622f22e.chunk.css.map",
     "static/css/main.03f4ef2b.chunk.css.map": "/word-guess-react/static/css/main.03f4ef2b.chunk.css.map",
     "static/media/flag-icon.min.css": "/word-guess-react/static/media/zw.ad4ad36d.svg"
-  }
+  },
+  "entrypoints": [
+    "static/js/runtime-main.311f1717.js",
+    "static/css/2.8622f22e.chunk.css",
+    "static/js/2.48d99330.chunk.js",
+    "static/css/main.03f4ef2b.chunk.css",
+    "static/js/main.6e4a03dd.chunk.js"
+  ]
 }
