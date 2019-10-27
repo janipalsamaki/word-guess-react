@@ -9,19 +9,19 @@
   "author": "Jani Palsamäki",
   "license": "ISC",
   "devDependencies": {
-    "react-scripts": "^3.1.1"
+    "react-scripts": "^3.2.0"
   },
   "dependencies": {
     "@types/classnames": "^2.2.9",
-    "@types/jest": "^24.0.18",
-    "@types/node": "^12.7.3",
-    "@types/react": "^16.9",
-    "@types/react-dom": "^16.9",
+    "@types/jest": "^24.0.20",
+    "@types/node": "^12.11.7",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
     "classnames": "^2.2.6",
     "flag-icon-css": "3.3.0",
     "gh-pages": "^2.1",
-    "react": "^16.9",
-    "react-dom": "^16.9",
+    "react": "^16.11",
+    "react-dom": "^16.11",
     "typescript": "^3.6"
   },
   "scripts": {
